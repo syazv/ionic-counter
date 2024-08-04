@@ -7,6 +7,32 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
+  counter:number = 0
+  message:string = ""
+
   constructor() {}
+
+  presentAlert() {
+    this.message = "Number cannot be less than 0"
+  }
+
+  incrementPressed() {
+    this.message = ""
+    this.counter++
+  }
+
+  decrementPressed() {
+    if (this.counter == 1){
+      this.presentAlert()
+    }
+    this.counter--
+    
+  }
+
+  resetPressed() {
+    this.counter = 0
+  }
+
+  
 
 }
